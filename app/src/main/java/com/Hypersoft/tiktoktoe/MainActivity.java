@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         firstTurn();
         if (savedInstanceState != null){
             player1_turn = savedInstanceState.getBoolean("player_turn");
+            ispis.setText(savedInstanceState.getCharSequence("ispis_ekran"));
             dugme[0].setText(savedInstanceState.getCharSequence("dugme1"));
             dugme[1].setText(savedInstanceState.getCharSequence("dugme2"));
             dugme[2].setText(savedInstanceState.getCharSequence("dugme3"));
@@ -63,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState){
         super.onSaveInstanceState(savedInstanceState);
-        savedInstanceState.putBoolean("payer_turn",player1_turn);
+        savedInstanceState.putBoolean("player_turn",player1_turn);
+        savedInstanceState.putCharSequence("ispis_ekran",ispis.getText());
         savedInstanceState.putCharSequence("dugme1",dugme[0].getText());
         savedInstanceState.putCharSequence("dugme2",dugme[1].getText());
         savedInstanceState.putCharSequence("dugme3",dugme[2].getText());
